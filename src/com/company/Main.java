@@ -67,4 +67,8 @@ public class Main {
         return ' ';
 
     }
+    public String completeCipher(char letter2){
+
+        return " ";
+    }
 }
