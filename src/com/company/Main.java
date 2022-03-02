@@ -7,6 +7,7 @@ public class Main {
 
     Random roll = new Random();
     Scanner keyboard = new Scanner(System.in);
+    String alfabet=" ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ";
 
     public static void main(String[] args) {
 	// write your code here
@@ -15,24 +16,34 @@ public class Main {
     }
     public void menu(int command){
         switch (command){
-            case 1 -> caesarEncryption();
-            case 2 -> caesarDecryption();
+            case 1 -> caesarEncryptionMenu();
+            //case 2 -> caesarDecryption();
             default -> menu(keyboard.nextInt());
         }
     }
-    public String caesarInput(){
+    public void caesarEncryptionMenu(){
         String input = keyboard.nextLine();
-      return input;
+        caesarEncryption(input);
     }
-    public int lettersToNumbers(){
-        caesarInput()
-        String alfabet=" ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ";
-        return numbers;
+    public int caesarEncryption(String input){
+
+
+
+        for (int i=0; i<input.length(); i++){
+            char letter = input.charAt(i);
+            lettersToNumbers();
+        }
+        return -1;
+    }
+    public void lettersToNumbers(){
+
     }
     public int shiftNumbers(){
+        return -1;
 
     }
     public String numbersToLetters(){
+        return " ";
 
     }
 }
