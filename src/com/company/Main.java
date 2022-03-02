@@ -29,6 +29,8 @@ public class Main {
         caesarEncryption(input);
     }
     public int caesarEncryption(String input){
+        System.out.println("Input Shift");
+        int talShifted = keyboard.nextInt();
 
 
 
@@ -36,6 +38,8 @@ public class Main {
             char letter = input.charAt(i);
             int tal = letterToNumber(letter);
             System.out.println(tal);
+            shiftNumber(tal,talShifted);
+            numbersToLetters(talShifted);
         }
         return -1;
     }
@@ -48,13 +52,12 @@ public class Main {
         }
         return -1;
     }
-    public int shiftNumbers(){
-        for (int i=0;i<0;i++){
-
-        }
-        return -1;
+    public int shiftNumber(int tal, int talShifted){
+        int numberShifted = tal+=talShifted;
+        System.out.println(tal);
+        return numberShifted;
     }
-    public String numbersToLetters(){
+    public String numbersToLetters(int talShifted){
         return " ";
 
     }
