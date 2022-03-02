@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class Main {
     }
     public void caesarEncryptionMenu(){
         System.out.println("Input Line");
-        String input = keyboard.nextLine();
+        String input = keyboard.nextLine().toUpperCase();
         caesarEncryption(input);
     }
     public int caesarEncryption(String input){
@@ -37,9 +38,9 @@ public class Main {
         for (int i=0; i<input.length(); i++){
             char letter = input.charAt(i);
             int tal = letterToNumber(letter);
-            System.out.println(tal);
-            shiftNumber(tal,talShifted);
-            numbersToLetters(talShifted);
+            //System.out.println(tal);
+            int shiftNumber=shiftNumber(tal,talShifted);
+            System.out.print(numberToLetter(shiftNumber,input));
         }
         return -1;
     }
@@ -54,11 +55,16 @@ public class Main {
     }
     public int shiftNumber(int tal, int talShifted){
         int numberShifted = tal+=talShifted;
-        System.out.println(tal);
+        //System.out.println(tal);
         return numberShifted;
     }
-    public String numbersToLetters(int talShifted){
-        return " ";
+    public char numberToLetter(int numberShifted, String input){
+        char letter2;
+        for (int i=0; i<input.length(); i++){
+            letter2 = alfabet.charAt(numberShifted);
+        return letter2;
+        }
+        return ' ';
 
     }
 }
