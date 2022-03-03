@@ -17,6 +17,7 @@ public class Main {
             Choose menu option
             1. Caesar Encryption
             2. Caesar Decryption
+            3. Exit Program
             """);
         action.menu(action.keyboard.nextInt());
     }
@@ -25,6 +26,7 @@ public class Main {
         switch (command){
             case 1 -> caesarEncryptionMenu();
             case 2 -> caesarDecryptionMenu();
+            case 3 -> exitProgram();
             default -> menu(keyboard.nextInt());
         }
     }
@@ -32,6 +34,13 @@ public class Main {
         System.out.println("Input sentence you wish encrypted");
         String input = keyboard.nextLine().toUpperCase();
         System.out.println(caesarEncryption(input));
+        System.out.printf("""
+            Choose menu option
+            1. Caesar Encryption
+            2. Caesar Decryption
+            3. Exit Program
+            """);
+        menu(keyboard.nextInt());
     }
     public String caesarEncryption(String input){
         System.out.println("Input Shift value");
@@ -81,5 +90,14 @@ public class Main {
         System.out.println("Input sentence you wish decrypted");
         String input = keyboard.nextLine().toUpperCase();
         System.out.println(caesarEncryption(input));
+        System.out.printf("""
+            Choose menu option
+            1. Caesar Encryption
+            2. Caesar Decryption
+            3. Exit Program
+            """);
+        menu(keyboard.nextInt());
+    }
+    public void exitProgram(){
     }
 }
