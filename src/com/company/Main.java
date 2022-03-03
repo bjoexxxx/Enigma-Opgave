@@ -13,7 +13,11 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Main action = new Main();
-        System.out.println("Choose menu option");
+        System.out.printf("""
+            Choose menu option
+            1. Caesar Encryption
+            2. Caesar Decryption
+            """);
         action.menu(action.keyboard.nextInt());
     }
     public void menu(int command){
@@ -25,12 +29,12 @@ public class Main {
         }
     }
     public void caesarEncryptionMenu(){
-        System.out.println("Input Line");
+        System.out.println("Input sentence you wish encrypted");
         String input = keyboard.nextLine().toUpperCase();
         System.out.println(caesarEncryption(input));
     }
     public String caesarEncryption(String input){
-        System.out.println("Input Shift");
+        System.out.println("Input Shift value");
         int talShifted = keyboard.nextInt();
         StringBuilder build = new StringBuilder();
 
@@ -74,7 +78,7 @@ public class Main {
 
     }
     public void caesarDecryptionMenu(){
-        System.out.println("input line");
+        System.out.println("Input sentence you wish decrypted");
         String input = keyboard.nextLine().toUpperCase();
         System.out.println(caesarEncryption(input));
     }
