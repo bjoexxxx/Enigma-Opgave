@@ -20,7 +20,7 @@ public class Main {
         keyboard.nextLine();
         switch (command){
             case 1 -> caesarEncryptionMenu();
-            //case 2 -> caesarDecryption();
+            case 2 -> caesarDecryptionMenu();
             default -> menu(keyboard.nextInt());
         }
     }
@@ -67,5 +67,10 @@ public class Main {
         }
         return ' ';
 
+    }
+    public void caesarDecryptionMenu(){
+        System.out.println("input line");
+        String input = keyboard.nextLine().toUpperCase();
+        System.out.println(caesarEncryption(input));
     }
 }
