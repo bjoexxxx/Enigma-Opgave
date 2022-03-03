@@ -27,22 +27,23 @@ public class Main {
     public void caesarEncryptionMenu(){
         System.out.println("Input Line");
         String input = keyboard.nextLine().toUpperCase();
-        caesarEncryption(input);
+        System.out.println(caesarEncryption(input));
     }
-    public int caesarEncryption(String input){
+    public String caesarEncryption(String input){
         System.out.println("Input Shift");
         int talShifted = keyboard.nextInt();
-
-
+        StringBuilder build = new StringBuilder();
 
         for (int i=0; i<input.length(); i++){
             char letter = input.charAt(i);
             int tal = letterToNumber(letter);
             //System.out.println(tal);
             int shiftNumber=shiftNumber(tal,talShifted);
-            System.out.print(numberToLetter(shiftNumber,input));
+            numberToLetter(shiftNumber,input);
+            //System.out.print(numberToLetter(shiftNumber,input));
+            build.append(numberToLetter(shiftNumber,input));
         }
-        return -1;
+        return build.toString();
     }
     public int letterToNumber(char letter){
         for (int i=0;i<alfabet.length();i++){
@@ -66,9 +67,5 @@ public class Main {
         }
         return ' ';
 
-    }
-    public String completeCipher(char letter2){
-
-        return " ";
     }
 }
