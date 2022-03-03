@@ -39,6 +39,11 @@ public class Main {
             int tal = letterToNumber(letter);
             //System.out.println(tal);
             int shiftNumber=shiftNumber(tal,talShifted);
+            if (shiftNumber>29){
+                shiftNumber = (tal-alfabet.length()+1)+talShifted;
+            } else if (shiftNumber<0){
+                shiftNumber = (tal+alfabet.length()-1)+talShifted;
+            }
             numberToLetter(shiftNumber,input);
             //System.out.print(numberToLetter(shiftNumber,input));
             build.append(numberToLetter(shiftNumber,input));
@@ -55,7 +60,7 @@ public class Main {
         return -1;
     }
     public int shiftNumber(int tal, int talShifted){
-        int numberShifted = tal+=talShifted;
+        int numberShifted = tal+talShifted;
         //System.out.println(tal);
         return numberShifted;
     }
